@@ -1,0 +1,64 @@
+class biberon {
+
+    attributs :
+        int m_temps_apres_regurgitation
+    
+    méthode :
+        void reglerBiberonMax(int biberonMax)
+        void reglerHeureDePrise(int heurePrise)
+        void prochainBiberon(int intervalleDeRappel)
+        void quantiteLaitIngere(int quantiteLaitIngere)
+        bool regurgiteBiberon()
+
+}
+
+Créer un rappel à intervalle variable pour donner le biberon à son enfant
+Possibilité de rajouter les heures de prise du biberon du bébé
+Possibilité de rajouter la quantité de lait ingérée par le bébé
+Prendre en compte la possibilité que le bébé régurgite son biberon
+
+
+
+
+    A quelle intervalle voulez-vous donner le biberon à votre bébé (3 heures recommandé) : 
+
+        - entrez "intervalle_de_rappel"
+
+    Combien de biberons max donnerez-vous par jour à votre bébé par jour ?
+
+        - entrez "biberonMax"
+
+    ---------------------------------------------------------------
+
+    If (m_biberon_max >= 0)
+    {
+
+        Il est l'heure de donner le biberon à votre bébé.
+
+        bool(regurgiteBiberon)
+
+            Yes
+            
+                Nettoyez la pièce et attendez "m_temps_apres_regurgitation"
+
+                    code : intervalleDeRappel + m_temps_apres_regurgitation
+
+            No
+
+                entrez la quantité de lait ingéré par le bébé :
+
+                    - entrez "quantiteLaitIngere"
+
+                entrez l'heure de prise du biberon :
+
+                    - l'heure de prise du biberon est "heure_prise"
+
+                il faudra encore lui donner "m_biberon_max - 1"
+    
+                    - le prochain biberon pourra être prit dans "m_intervalle_rappel".
+    }                
+
+    Else
+    {
+        Votre bébé a prit tout ses biberons aujourd'hui. Bravo vous êtes des parents exemplaires mdr.
+    }
