@@ -1,16 +1,25 @@
 class biberon {
 
     attributs :
-        int m_temps_apres_regurgitation
-    
+        int m_intervalle_rappel;
+        int m_biberon_max; // le nombre max de biberons par jour
+        bool m_regurgite_biberon;
+        int m_temps_apres_regurgitation;
+        int m_quantite_lait_ingere;
+        int m_heure_prise;
+        int m_quantite_min ; // quantite minimale de lait à donner
+        int m_quantite_restant // quantite de lait restant dans le biberon 
+
     méthode :
-        void reglerBiberonMax(int biberonMax)
-        void reglerHeureDePrise(int heurePrise)
-        void prochainBiberon(int intervalleDeRappel)
-        void quantiteLaitIngere(int quantiteLaitIngere)
-        bool regurgiteBiberon()
+       void creerRappel(int m_heure_prise, int m_intervalle_rappel)
+       void rejouterHeureDePrise(int m_heure_prise, int m_intervalle_rappel)
+       void rajouterQuantiteDeLaitIngeree(int quantite_restante, int m_quantite_min)
+       bool regurgiteBiberon()
+
 
 }
+
+
 
 Créer un rappel à intervalle variable pour donner le biberon à son enfant
 Possibilité de rajouter les heures de prise du biberon du bébé
@@ -19,35 +28,37 @@ Prendre en compte la possibilité que le bébé régurgite son biberon
 
 
 
+*******************************
 
     A quelle intervalle voulez-vous donner le biberon à votre bébé (3 heures recommandé) : 
 
-        - entrez "intervalle_de_rappel"
+        - entrez "intervalle_rappel"
 
     Combien de biberons max donnerez-vous par jour à votre bébé par jour ?
 
-        - entrez "biberonMax"
+        - entrez "biberon_max"
 
     ---------------------------------------------------------------
 
     If (m_biberon_max >= 0)
+
     {
 
         Il est l'heure de donner le biberon à votre bébé.
 
-        bool(regurgiteBiberon)
+        bool(regurgite_biberon)
 
             Yes
             
-                Nettoyez la pièce et attendez "m_temps_apres_regurgitation"
+                Nettoyez la pièce et attendez "temps_apres_regurgitation"
 
-                    code : intervalleDeRappel + m_temps_apres_regurgitation
+                    code : intervalle_rappel + temps_apres_regurgitation
 
             No
 
                 entrez la quantité de lait ingéré par le bébé :
 
-                    - entrez "quantiteLaitIngere"
+                    - entrez "quantite_lait_ingere"
 
                 entrez l'heure de prise du biberon :
 
@@ -55,10 +66,11 @@ Prendre en compte la possibilité que le bébé régurgite son biberon
 
                 il faudra encore lui donner "m_biberon_max - 1"
     
-                    - le prochain biberon pourra être prit dans "m_intervalle_rappel".
+                    - le prochain biberon pourra être prit dans "intervalle_rappel".
     }                
 
     Else
+
     {
-        Votre bébé a prit tout ses biberons aujourd'hui. Bravo vous êtes des parents exemplaires mdr.
+        Votre bébé a prit tout ses biberons aujourd'hui.
     }
