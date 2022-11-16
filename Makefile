@@ -5,10 +5,10 @@
 # Compiler settings - Can be customized.
 CC = g++
 CXXFLAGS = -std=c++11 -Wall
-LDFLAGS = 
+LDFLAGS = -lSDL2 -lSDL_ttf -lGL -lGLEW
 
 # Makefile settings - Can be customized.
-APPNAME = myapp
+APPNAME = gestionbebe
 EXT = .cpp
 SRCDIR = src
 OBJDIR = obj
