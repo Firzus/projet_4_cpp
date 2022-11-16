@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     // Toujours penser au rendu, sinon on n'obtient rien du tout
     SDL_RenderPresent(renderer);
 
-    SDL_Delay(5000); // pause de 20 secondes, pour admirer notre œuvre autant que l'on veut
+    SDL_Delay(5000); // pause de 5 secondes, pour admirer notre œuvre autant que l'on veut
 
     // Destruction du renderer et de la fenêtre :
     SDL_DestroyRenderer(renderer);
