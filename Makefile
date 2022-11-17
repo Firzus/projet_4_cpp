@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++11 -Wall
 LDFLAGS = -lSDL2 -lSDL_ttf -lGL -lGLEW
 
 # Makefile settings - Can be customized.
-APPNAME = gestionbebe
+APPNAME = babynator3000
 EXT = .cpp
 SRCDIR = src
 OBJDIR = obj
