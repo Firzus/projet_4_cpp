@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     // Render rect
     SDL_RenderFillRect(renderer, &r);
 
-    SDL_Surface *s = TTF_RenderText_Solid(font, "Bonjur", {0, 0, 0, 255});
+    SDL_Surface *s = TTF_RenderText_Solid(font, "Bonjour", {0, 0, 0, 255});
     SDL_Texture *tex = SDL_CreateTextureFromSurface(renderer, s);
     SDL_FreeSurface(s);
     SDL_RenderCopy(renderer, tex, NULL, &r);
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     {
         SDL_RenderPresent(renderer);
         event(fenetre, renderer, done, x, y);
-        SDL_Delay(50);
+        SDL_Delay(100);
     }
 
     // Destruction du renderer et de la fenêtre :

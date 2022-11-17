@@ -43,3 +43,4 @@ void event(SDL_Window *window, SDL_Renderer *renderer, int &done, int &x, int &y
             }
         };
     };
+}
