@@ -1,14 +1,11 @@
 #include "Fonction.hpp"
 
-void event(SDL_Window *window, SDL_Renderer *renderer, int &done, int &x, int &y)
+void event(SDL_Window *window, SDL_Renderer *renderer, int &done)
 {
     SDL_Event event;
 
     while (SDL_PollEvent(&event))
     {
-
-        int x, y;
-        SDL_GetMouseState(&x, &y);
 
         switch (event.type)
         {
@@ -34,13 +31,13 @@ void event(SDL_Window *window, SDL_Renderer *renderer, int &done, int &x, int &y
             case SDL_BUTTON_LEFT:
 
                 // BOUGE LE BOUTON //
-
-                break;
-
-            case SDL_QUIT:
-                done = 1;
                 break;
             }
-        };
+            break;
+
+        case SDL_QUIT:
+            done = 1;
+            break;
+        }
     };
 }

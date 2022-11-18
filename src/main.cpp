@@ -22,7 +22,6 @@
 int main(int argc, char *argv[])
 {
     int done = 0;
-    int x, y;
     SDL_Window *fenetre;
     SDL_Renderer *renderer; // Déclaration du renderer
 
@@ -85,7 +84,7 @@ int main(int argc, char *argv[])
     while (done != 1)
     {
         SDL_RenderPresent(renderer);
-        event(fenetre, renderer, done, x, y);
+        event(fenetre, renderer, done);
         SDL_Delay(100);
     }
 
